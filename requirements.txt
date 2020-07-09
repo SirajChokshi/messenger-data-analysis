@@ -1,0 +1,5 @@
+###### Requirements ######
+unidecode
+matplotlib
+numpy
+nltk
