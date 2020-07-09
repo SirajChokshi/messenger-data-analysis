@@ -8,11 +8,13 @@ Analytics for your Facebook Messenger<sup>1</sup> data dump (quantitative metric
 
 ### Downloading Data
 
-To download your Facebook Messenger data follow instructions relevant to your Facebook version [as described by the Facebook Help Center](https://www.facebook.com/help/1701730696756992?helpref=hc_global_nav).
+1. To download your Facebook Messenger data follow instructions relevant to your Facebook version [as described by the Facebook Help Center](https://www.facebook.com/help/1701730696756992?helpref=hc_global_nav).
 
 **Ensure you have selected the "Messages" category**
 
-Proceed to extract the `facebook-<name>.zip` folder and navigate to the contents of `messages/`. Place the contents of this folder in your clone of this repository<sup>2</sup>.
+2. Clone this repository `git clone https://github.com/SirajChokshi/messenger-data-analysis.git` or download as zip.
+
+3. Proceed to extract the `facebook-<name>.zip` folder and navigate to the contents of `messages/`. Place the contents of this folder in your clone of this repository<sup>2</sup>.
 
 Ensure that your file structure looks something like this:
 
@@ -33,7 +35,7 @@ Ensure that your file structure looks something like this:
 
 2. Proceed to run the script in a Python 3 environment.
 
-### Licensing
+## Licensing
 
 NCSA/University of Illinois license. Feel free to fork, remix, share, and incorporate into your own work.
 
