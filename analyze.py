@@ -2,7 +2,7 @@
 """
 messenger-data-analysis parses through, and analyzes, Facebook Messenger** data dumps for both quantitative information and textual analysis. 
 
-** not associated, authorized, or endorsed by Facebook. Software and related trademarks regarding Messenger are owned bt Facebook
+** not associated, authorized, or endorsed by Facebook. Software and related trademarks regarding Messenger are owned by Facebook
 """
 
 import os
