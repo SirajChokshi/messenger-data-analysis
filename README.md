@@ -10,7 +10,7 @@ Analytics for your Facebook Messenger<sup>1</sup> data dump (quantitative metric
 
 1. To download your Facebook Messenger data follow instructions relevant to your Facebook version [as described by the Facebook Help Center](https://www.facebook.com/help/1701730696756992?helpref=hc_global_nav).
 
-> :warning: **Ensure you have selected the "Messages" category** All other categories can be safely deselected to a users discretion
+> :warning: **Ensure you have selected the "Messages" category.** All other categories can be safely deselected to a users discretion
 
 2. Clone this repository `git clone https://github.com/SirajChokshi/messenger-data-analysis.git` or download as zip.
 

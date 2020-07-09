@@ -185,18 +185,19 @@ while True:
         if bins < 12:
             bins = 12
 
-        fig, ax = plt.subplots(1,1)
+        fig, ax = plt.subplots(2,2, figsize=(12,8))
 
-        ax.hist(time_one, bins=bins, color='r', alpha=0.6, range=(first, last), label=chats[UINDEX].senders[main_speaker_index].name)
-        ax.hist(time_two, bins=bins, color='y', alpha=0.6, range=(first, last), label=chats[UINDEX].senders[other_speaker_index].name)
+        plt.subplots_adjust(left=0.08, bottom=0.1, right=0.92, top=0.96, wspace=0.18, hspace=0.4)
 
-        ax.tick_params(labelsize=8)
-        ax.set_ylabel("Messages")
-        ax.set_xlabel("Time")
+        ax[0][0].hist(time_one, bins=bins, color='r', alpha=0.6, range=(first, last), label=chats[UINDEX].senders[main_speaker_index].name)
+        ax[0][0].hist(time_two, bins=bins, color='y', alpha=0.6, range=(first, last), label=chats[UINDEX].senders[other_speaker_index].name)
+        ax[0][0].set_title("Messages vs Time")
+        ax[0][0].tick_params(labelsize=8)
+        ax[0][0].set_ylabel("Messages")
+        ax[0][0].set_xlabel("Time")
+        plt.sca(ax[0, 0])
         plt.xticks(rotation=45)
-        ax.legend()
-
-        plt.show()
+        ax[0][0].legend()
 
         fdist_list = []
 
@@ -204,7 +205,12 @@ while True:
         stop_words.update(['like','u','ur','im','also','gonna','cuz','really','rly','actually','tho','y','ye','yea','yeah','yee','no','na','nah','nahh','would','should','bc','dont','go','get','much','kinda','want', 'one','r','c','cool','think','good','w','good','got','thats','could','pretty','1','2','3','4','5','6','7','8','9','0','know','right','lot','lol','thought',])
         stop_words.update(['itas','iam','donat','thatas','iall','didnat','canat','havenat'])
 
+        counter = 0
+
         for sender in chats[UINDEX].senders:
+
+            if counter == 2:
+                break;
             
             all_messages = ""
 
@@ -221,9 +227,32 @@ while True:
 
             text = nltk.Text(filtered_tokens)
             fdist = nltk.FreqDist(text)
-            print(sender.name + ": ", fdist.most_common(10))
+
+            most_common = fdist.most_common(10)
+
+            print(sender.name + ": ", most_common)
+
+            x = [val[0] for val in most_common]
+            height = [val[1] for val in most_common]
+
+            x2 = list(range(0,len(most_common)))
+
+            ax[1][counter].bar(x2, height)
+            ax[1][counter].set_title(sender.name + "'s Most Frequent Words")
+            ax[1][counter].set_ylabel("Occurances")
+            ax[1][counter].set_xlabel("Token")
+
+            for index, value in enumerate(height):
+                ax[1][counter].text(index - len(str(value)) / 8, value + 0.1, str(value), color="black", fontweight='bold')
+
+            plt.sca(ax[1, counter])
+            plt.ylim(0, max(height) * 1.2)
+            plt.xticks(x2,x, rotation=45)
+
+            counter += 1
 
         print()
+        plt.show()
     else:
         print("\nNo Results :(\n")
     
