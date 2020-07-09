@@ -41,6 +41,6 @@ NCSA/University of Illinois license. Feel free to fork, remix, share, and incorp
 
 ## Footnotes
 
-1. _not associated, authorized, or endorsed by Facebook. Software and related trademarks regarding Messenger are owned bt Facebook_
+1. _not associated, authorized, or endorsed by Facebook. Software and related trademarks regarding Messenger are owned by Facebook_
 
 2. _this program only requires an `inbox/` folder to function_
