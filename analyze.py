@@ -1,14 +1,30 @@
+
+"""
+messenger-data-analysis parses through, and analyzes, Facebook Messenger** data dumps for both quantitative information and textual analysis. 
+
+** not associated, authorized, or endorsed by Facebook. Software and related trademarks regarding Messenger are owned bt Facebook
+"""
+
 import os
+import math
+from datetime import datetime
+import json
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib import dates
-from datetime import datetime
-import math
 import nltk
 from nltk.tokenize import RegexpTokenizer
 from nltk.corpus import stopwords
-import json
 from unidecode import unidecode
+
+__author__ = "Siraj Chokshi"
+__copyright__ = "Copyright 2020, Siraj Chokshi"
+
+__license__ = "NCSA/University of Illinois"
+__version__ = "1.0.0"
+__maintainer__ = "Siraj Chokshi"
+__email__ = "sirajsc2@illinois.edu"
+__status__ = "Prototype"
 
 class Chat:
     def __init__(self, name):
